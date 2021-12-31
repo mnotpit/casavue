@@ -1,16 +1,47 @@
-import Vue from "vue";
-import Vuex from "vuex";
+//import Vue from "vue"
+import { createApp } from "vue";
+import { createStore } from "vuex";
+//import Vuex from "vuex";
 //import PropNode from "./models";
 import App from "./App.vue";
 
-Vue.use(Vuex);
-Vue.config.productionTip = false;
-/*
+//Vue.use(Vuex);
+//Vue.config.productionTip = false;
+
 const currentProperty = {
-  nodes: [{ id: 1, name: "", type: "", resources: [] }],
-  tasks: []
+  propertyDetail: {},
+  nodes: [
+    {
+      nodeId: 1,
+      parentNodeId: 0,
+      name: "Trails End",
+      nodeTypeId: "",
+      resources: []
+    }
+  ],
+  tasks: [{ nodeId: 1, taskName: "", taskStatus: false }],
+  nodeTypes: [
+    { typeId: 0, name: "Property" },
+    { typeId: 1, name: "Structure Group" },
+    { typeId: 2, name: "Outdoor Feature Group" },
+    { typeId: 3, name: "Utility Group" },
+    { typeId: 10, name: "Structure" },
+    { typeId: 20, name: "Level" },
+    { typeId: 30, name: "Space" },
+    { typeId: 40, name: "Appliance Group" },
+    { typeId: 41, name: "Furnishing Group" },
+    { typeId: 1000, name: "Basic Item" },
+    { typeId: 1001, name: "Appliance" }
+  ],
+  nodeTypeChildren: [
+    { parentTypeId: 0, childTypeIds: [1, 2, 3, 1000] },
+    { parentTypeId: 1, childTypeIds: [10] },
+    { parentTypeId: 2, childTypeIds: [] },
+    { parentTypeId: 20, childTypeIds: [30, 1000] },
+    { parentTypeId: 30, childTypeIds: [40, 41] }
+  ]
 };
-*/
+
 const exampleNode = {
   id: 1111,
   name: "testnode1",
@@ -44,7 +75,7 @@ const exampleNode = {
   ]
 };
 
-const pjstore = new Vuex.Store({
+const pjstore = createStore({
   state: {
     currentNode: exampleNode,
     currentNodeId: 0
@@ -52,15 +83,24 @@ const pjstore = new Vuex.Store({
   mutations: {
     addNode(state, newNode) {
       console.log("mutations.addNode");
-      state.childnodes.push(newNode);
+      state.currentNode.childnodes.push(newNode);
     },
     addTask(state, newTask) {
-      state.tasks.push(newTask);
+      state.currentNode.tasks.push(newTask);
     }
   }
 });
-
+/*
+const appData = {
+  data() {
+    return { routeNodeId: 0 };
+  }
+};
+*/
+createApp(App).use(pjstore).mount("#pjapp");
+/*
 new Vue({
   render: (h) => h(App),
   store: pjstore
 }).$mount("#pjapp");
+*/

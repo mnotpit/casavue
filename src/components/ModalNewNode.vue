@@ -24,6 +24,7 @@
               id="addName"
               class="form-control"
               placeholder="Item Name"
+              v-model="nodeName"
             />
             <label for="addName">Name</label>
           </div>
@@ -32,7 +33,7 @@
           <button class="btn btn-secondary" data-bs-dismiss="modal">
             Close
           </button>
-          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-primary" @click="addChild">Save</button>
         </div>
       </div>
     </div>
@@ -43,5 +44,16 @@
 export default {
   name: "ModalNewNode",
   props: {},
+  data() {
+    return {
+      nodeName: "default",
+    };
+  },
+  methods: {
+    addChild(event) {
+      console.log("ModalNewNode.addChild()");
+      this.$store.commit("addNode", { id: 10, name: this.nodeName });
+    },
+  },
 };
 </script>

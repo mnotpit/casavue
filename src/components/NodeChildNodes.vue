@@ -10,7 +10,6 @@
       class="list-group-item list-group-item-primary d-flex justify-content-center"
       data-bs-toggle="modal"
       data-bs-target="#modalAdd"
-      @click="addChild"
       ><i class="fas fa-plus-square fs-4"></i
     ></a>
   </div>
@@ -27,11 +26,6 @@ export default {
   components: {
     ChildNodeItem,
   },
-  methods: {
-    addChild(event) {
-      console.log("NodeChildNodes.addChild()");
-      this.$store.commit("addNode", { id: 10, name: "NEWCHILD" });
-    },
-  },
+  methods: {},
 };
 </script>

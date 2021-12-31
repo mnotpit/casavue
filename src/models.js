@@ -1,6 +1,5 @@
 /**
  * Basic structure of a single node
- */
 const PropNode = {
   id: 0,
   name: "",
@@ -8,3 +7,4 @@ const PropNode = {
   details: [],
   resources: []
 };
+ */
