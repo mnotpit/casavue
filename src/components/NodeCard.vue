@@ -69,11 +69,11 @@
 </template>
 
 <script>
-import NodeChildNodes from "./NodeChildNodes";
-import NodeDetails from "./NodeDetails";
-import NodeTasks from "./NodeTasks";
-import NodeHistory from "./NodeHistory";
-import NodeResources from "./NodeResources";
+import NodeChildNodes from "./features/childnodes/NodeChildNodes";
+import NodeDetails from "./features/details/NodeDetails";
+import NodeTasks from "./features/tasks/NodeTasks";
+import NodeHistory from "./features/history/NodeHistory";
+import NodeResources from "./features/resources/NodeResources";
 
 export default {
   name: "NodeCard",

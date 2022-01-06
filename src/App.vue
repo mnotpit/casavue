@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Breadcrumbs from "./components/Breadcrumbs";
+import Breadcrumbs from "./components/features/breadcrumbs/Breadcrumbs";
 import NodeCard from "./components/NodeCard";
 import ModalNewNode from "./components/ModalNewNode";
 /*
