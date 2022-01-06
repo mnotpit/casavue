@@ -1,6 +1,6 @@
 <template>
   <a href="" class="list-group-item d-flex justify-content-between"
-    >{{ name }}
+    >{{ name }} [{{ id }}]
     <span class="badge bg-primary rounded-pill">2</span>
   </a>
 </template>

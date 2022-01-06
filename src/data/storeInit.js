@@ -6,12 +6,14 @@ export default createStore({
   state: {
     currentNode: exampleNode,
     currentProperty: currentProperty,
-    currentNodeId: 0
+    currentNodeId: 1
   },
   mutations: {
     addNode(state, newNode) {
       console.log("mutations.addNode");
+      newNode.parentNodeId = state.currentNodeId;
       state.currentNode.childnodes.push(newNode);
+      state.currentProperty.nodes.push(newNode);
     },
     addTask(state, newTask) {
       state.currentNode.tasks.push(newTask);

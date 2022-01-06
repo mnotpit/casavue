@@ -52,7 +52,7 @@ export default {
   methods: {
     addChild(event) {
       console.log("ModalNewNode.addChild()");
-      this.$store.commit("addNode", { id: 10, name: this.nodeName });
+      this.$store.commit("addNode", { nodeId: 10, name: this.nodeName });
     },
   },
 };

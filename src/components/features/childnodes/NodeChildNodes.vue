@@ -1,8 +1,9 @@
 <template>
   <div class="list-group list-group-flush">
     <ChildNodeItem
-      v-for="node in childnodes"
-      :key="node.id"
+      v-for="node in childNodes"
+      :key="node.nodeId"
+      :id="node.nodeId"
       :name="node.name"
     />
     <a
@@ -21,11 +22,10 @@ import ChildNodeItem from "./ChildNodeItem";
 export default {
   name: "NodeChildNodes",
   props: {
-    childnodes: Array,
+    childNodes: Array,
   },
   components: {
     ChildNodeItem,
   },
-  methods: {},
 };
 </script>

@@ -50,7 +50,7 @@
 
     <div class="tab-content">
       <div class="tab-pane active" id="items" role="tabpanel">
-        <NodeChildNodes :childnodes="node.childnodes" />
+        <NodeChildNodes :childNodes="node.childnodes" />
       </div>
       <div class="tab-pane" id="details" role="tabpanel">
         <NodeDetails :details="node.details" />
