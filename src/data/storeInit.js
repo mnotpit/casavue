@@ -17,6 +17,9 @@ export default createStore({
     },
     addTask(state, newTask) {
       state.currentNode.tasks.push(newTask);
+    },
+    setCurrentNodeId(state, nodeId) {
+      state.currentNodeId = nodeId;
     }
   }
 });

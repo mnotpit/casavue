@@ -33,7 +33,10 @@ export default {
       name: "House"
     }
   ],
-  tasks: [{ nodeId: 1, taskName: "", taskStatus: false }],
+  tasks: [
+    { nodeId: 1, taskName: "node1 task1", taskStatus: false },
+    { nodeId: 1, taskName: "node1 task2", taskStatus: true }
+  ],
   nodeTypes: [
     { typeId: 0, name: "Property" },
     { typeId: 1, name: "Structures Group" },

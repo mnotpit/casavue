@@ -1,6 +1,5 @@
 <template>
   <div class="list-group list-group-flush">
-    <DetailItem detailname="micro" detailvalue="tipton" />
     <DetailItem
       v-for="d in details"
       :key="d.id"

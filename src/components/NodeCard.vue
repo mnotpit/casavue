@@ -1,7 +1,11 @@
 <template>
   <div class="card">
     <div class="card-header">
-      <h5>Appliances</h5>
+      <h5>
+        {{ node.name }} [{{ node.nodeId }}] ({{
+          this.$store.state.currentNodeId
+        }})
+      </h5>
       <ul class="nav nav-tabs card-header-tabs" role="tablist">
         <li class="nav-item" role="presentation">
           <button
@@ -50,7 +54,7 @@
 
     <div class="tab-content">
       <div class="tab-pane active" id="items" role="tabpanel">
-        <NodeChildNodes :childNodes="node.childnodes" />
+        <NodeChildNodes :childNodes="node.childNodes" />
       </div>
       <div class="tab-pane" id="details" role="tabpanel">
         <NodeDetails :details="node.details" />

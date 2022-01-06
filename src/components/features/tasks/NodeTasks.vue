@@ -3,8 +3,8 @@
     <TaskItem
       v-for="t in tasks"
       :key="t.id"
-      :name="t.name"
-      :status="t.status"
+      :name="t.taskName"
+      :status="t.taskStatus"
     />
     <a
       href=""
